@@ -6,7 +6,7 @@
     <title>Info</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Comic Sans MS", cursive, sans-serif;
             margin: 0;
             text-align: center;
             background: url('https://i.gifer.com/7scx.gif') no-repeat center center fixed;
@@ -23,6 +23,19 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .avatar {
             width: 120px;
