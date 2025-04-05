@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,8 +13,7 @@
         }
 
         body {
-            font-family: "Segoe Script", cursive, sans-serif;
-            font-style: italic;
+            font-family: "Quicksand", sans-serif;
             text-align: center;
             color: white;
             height: 100vh;
@@ -82,8 +82,6 @@
         }
 
         .return-button {
-            font-family: "Segoe Script", cursive, sans-serif;
-            font-style: italic;
             margin-top: 20px;
             padding: 10px 20px;
             background-color: white;
@@ -100,8 +98,6 @@
         }
 
         .video-button {
-            font-family: "Segoe Script", cursive, sans-serif;
-            font-style: italic;
             position: fixed;
             right: 20px;
             bottom: 20px;
@@ -149,10 +145,6 @@
     </style>
 </head>
 <body>
-    <video autoplay muted loop playsinline id="bg-video">
-        <source src="https://gtexkz.github.io/index.mp4" type="video/mp4">
-        Ваш браузер не поддерживает видео.
-    </video>
 
     <div class="about-me">
         <h1>About me</h1>
@@ -177,6 +169,22 @@
             const videoContainer = document.getElementById('videoContainer');
             videoContainer.style.display = 'block';
         }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const video = document.createElement('video');
+            video.id = 'bg-video';
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+
+            const source = document.createElement('source');
+            source.src = 'https://gtexkz.github.io/index.mp4';
+            source.type = 'video/mp4';
+
+            video.appendChild(source);
+            document.body.prepend(video);
+        });
     </script>
 </body>
 </html>
