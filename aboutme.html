@@ -5,27 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: "Segoe Script", cursive, sans-serif;
             font-style: italic;
-            margin: 0;
             text-align: center;
-            background: url('https://gtexkz.github.io/tabletPC.gif') no-repeat center center fixed;
-            background-color: #000;
-            background-size: cover;
             color: white;
             height: 100vh;
+            overflow: hidden;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
             flex-direction: column;
-            overflow: hidden;
+        }
+
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            object-fit: cover;
         }
 
         body::after {
             content: '';
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -41,7 +55,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             max-width: 333px;
             width: 90%;
-            color: #fff;
             opacity: 0;
             transform: translateY(50px);
             animation: fadeInUp 1s ease-out forwards;
@@ -133,19 +146,14 @@
             font-size: 1.5rem;
             margin-top: 20px;
         }
-
-        @media (max-width: 768px) {
-            body {
-                background: url('https://media1.tenor.com/m/IfgnrAPweTAAAAAd/gun-drop.gif') no-repeat center center fixed;
-                background-size: cover;
-                height: 100vh;
-                background-position: center center;
-                overflow: hidden;
-            }
-        }
     </style>
 </head>
 <body>
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="https://gtexkz.github.io/index.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
     <div class="about-me">
         <h1>About me</h1>
         <p>I've nothing to say about myself :P</p>
