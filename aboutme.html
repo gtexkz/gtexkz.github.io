@@ -30,12 +30,10 @@
             position: fixed;
             top: 0;
             left: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -2;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            z-index: -1;
         }
 
         body::after {
@@ -147,19 +145,20 @@
 </head>
 <body>
 
-    <div class="about-me">
-    <h1>About me</h1>
-    <p>I've nothing to say about myself :P</p>
-    <p>
-        <a href="https://github.com/gtexkz" target="_blank" style="color: #4ea8ff; text-decoration: none;">
-            Just check my GitHub
-        </a>
-    </p>
-    <a href="index.html">
-        <button class="return-button">Return back</button>
-    </a>
-    </div>
+    <div id="bg-container"></div>
 
+    <div class="about-me">
+        <h1>About me</h1>
+        <p>I've nothing to say about myself :P</p>
+        <p>
+            <a href="https://github.com/gtexkz" target="_blank" style="color: #4ea8ff; text-decoration: none;">
+                Just check my GitHub
+            </a>
+        </p>
+        <a href="index.html">
+            <button class="return-button">Return back</button>
+        </a>
+    </div>
 
     <button class="video-button" onclick="openVideo()">?</button>
 
@@ -177,21 +176,20 @@
             videoContainer.style.display = 'block';
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            const video = document.createElement('video');
-            video.id = 'bg-video';
-            video.autoplay = true;
-            video.muted = true;
-            video.loop = true;
-            video.playsInline = true;
+        const video = document.createElement("video");
+        video.id = "bg-video";
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
 
-            const source = document.createElement('source');
-            source.src = './assets/background.mp4';
-            source.type = 'video/mp4';
+        const source = document.createElement("source");
+        source.src = "./assets/background.mp4";
+        source.type = "video/mp4";
 
-            video.appendChild(source);
-            document.body.prepend(video);
-        });
+        video.appendChild(source);
+        document.getElementById("bg-container").appendChild(video);
     </script>
 </body>
 </html>
+
